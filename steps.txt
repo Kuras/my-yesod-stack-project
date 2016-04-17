@@ -36,6 +36,6 @@ Hendler
         yesod add-handler
 
         some time install manualy
-        	stack install classy-prelude-yesod >=0.10.2
+            stack install classy-prelude-yesod >=0.10.2
 
 
