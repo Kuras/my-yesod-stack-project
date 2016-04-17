@@ -1,0 +1,38 @@
+(i)     instal stack (using stack command as cabal)
+(ii)    stack new my-yesod-stack-project yesod-sqlite && cd my-yesod-stack-project
+--and this cross point we can install sandbox--
+(iii)   stack install yesod-bin cabal-install --install-ghc
+(iv)    stack build
+-- start server --
+(v)     stack exec -- yesod devel
+(vi)    http://localhost:3000/
+
+-------------------------------------------------------------
+another
+
+(i)     yesod init (providing yesod) -> scafolding
+(ii)    cd project
+--and this cross point we can install sandbox--
+(iii)    cabal sandbox init (stack does not have sandbox ?!)
+-- start server --
+(v)     yesod devel
+
+-------------------------------------------------------------
+explorer .
+slime .
+
+-------------------------------------------------------------
+/ HomeR GET POST
+HomeR - constructor (type constructor -> type safe)
+
+Hendler
+    HomeR
+        Handler Html(returning html)
+        -- controller from mvc --
+        * generateFormPost
+        * defaultLayout
+        * widgetFile (colection of templates)
+        
+
+
+
