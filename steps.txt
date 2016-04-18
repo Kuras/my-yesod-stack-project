@@ -18,6 +18,32 @@ another
 (v)     yesod devel
 
 -------------------------------------------------------------
+with cabal sandbox - Using cabal in Stack environment
+
+* cabal.config
+
+(i)     cabal init              -> <project_name>.cabal
+(ii)    cabal sandbox init      -> cabal.sandbox.config
+        #Stackage use# 
+(iii)   curl http://www.stackage.org/<stackage version>/cabal.config > cabal.config
+        {   https://www.stackage.org/lts-5.12
+            https://www.stackage.org/lts-5.12/cabal.config
+        }                       -> cabal.config
+(iv)    cabal update && cabal install --only-dep
+        --build,test,compilation success--
+(v)     (iii a) remote-repo
+            manualy:
+                cabal freeze
+                    -> give these people
+
+(i)     yesod init (providing yesod) -> scafolding
+(ii)    cd project
+--and this cross point we can install sandbox--
+(iii)    cabal sandbox init (stack does not have sandbox ?!)
+-- start server --
+(v)     yesod devel
+
+-------------------------------------------------------------
 explorer .
 slime .
 
@@ -37,5 +63,6 @@ Hendler
 
         some time install manualy
             stack install classy-prelude-yesod >=0.10.2
+            cabal install aeson-0.11.1.4
 
 
