@@ -36,12 +36,15 @@ with cabal sandbox - Using cabal in Stack environment
                 cabal freeze
                     -> give these people
 
-(i)     yesod init (providing yesod) -> scafolding
-(ii)    cd project
---and this cross point we can install sandbox--
-(iii)    cabal sandbox init (stack does not have sandbox ?!)
--- start server --
-(v)     yesod devel
+(vi)    something wrong (cabal hell)
+            - clear folders
+                    ...\AppData\Roaming\cabal\packages
+                    ...\AppData\Roaming\stack
+                    ...\<app_root>\.sandbox.cabal (rm -r .cabal-sandbox/)
+            - stack install classy-prelude-yesod
+            - stack build
+            - stack exec -- yesod devel
+
 
 -------------------------------------------------------------
 explorer .
