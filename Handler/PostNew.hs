@@ -18,6 +18,13 @@ blogPostForm  = BlogPost
 
 getPostNewR :: Handler Html
 getPostNewR = do
-        (widget, enctype)<- generateFormPost $ renderBootstrap3 BootstrapBasicForm blogPostForm
-        defaultLayout $ do
-            $(widgetFile "posts/new")
+    (widget, enctype)<- generateFormPost $ renderBootstrap3 BootstrapBasicForm blogPostForm
+    defaultLayout $ do
+        $(widgetFile "posts/new")
+
+postPostNewR :: Handler Html
+postPostNewR = do
+    ((res,widget), enctype)<- runFormPost $ renderBootstrap3 BootstrapBasicForm blogPostForm
+    case res of
+        FormSuccess _ -> error "todo"
+        _ -> defaultLayout $(widgetFile "posts/new")
