@@ -25,5 +25,7 @@ postPostNewR :: Handler Html
 postPostNewR = do
     ((res,widget), enctype)<- runFormPost $ renderBootstrap3 BootstrapBasicForm blogPostForm
     case res of
-        FormSuccess _ -> error "todo"
+        FormSuccess blogPost -> do
+                _ <- runDB $ insert blogPost 
+                error "todo"
         _ -> defaultLayout $(widgetFile "posts/new")
