@@ -2,14 +2,13 @@ module Handler.PostNew where
 
 import Import
 import Yesod.Form.Bootstrap3
-import Text.Markdown (Markdown)
 import Yesod.Text.Markdown
 
 -- algebraic data structure 
-data BlogPost = BlogPost
-      { title :: Text,
-        article :: Markdown
-      }
+-- data BlogPost = BlogPost
+--       { title :: Text,
+--         article :: Markdown
+--       }
 
 blogPostForm  :: AForm Handler BlogPost
 blogPostForm  = BlogPost 
