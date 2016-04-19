@@ -3,4 +3,7 @@ module Handler.PostDetails where
 import Import
 
 getPostDetailsR :: BlogPostId -> Handler Html
-getPostDetailsR blogPostId = error "Not yet implemented: getPostDetailsR"
+getPostDetailsR blogPostId = do
+    blogPost <- runDB $ get404 blogPostId
+    defaultLayout $ do
+        $(widgetFile "PostDetails/post")
