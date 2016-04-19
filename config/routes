@@ -8,3 +8,4 @@
 
 /comments CommentR POST
 /posts/new PostNewR GET POST
+/posts/#BlogPostId PostDetailsR GET
