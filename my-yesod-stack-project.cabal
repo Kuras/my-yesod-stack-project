@@ -85,6 +85,8 @@ library
                  , time
                  , case-insensitive
                  , wai
+                 , markdown
+                 , yesod-text-markdown
 
 executable         my-yesod-stack-project
     if flag(library-only)

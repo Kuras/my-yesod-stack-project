@@ -2,15 +2,19 @@ module Handler.PostNew where
 
 import Import
 import Yesod.Form.Bootstrap3
+import Text.Markdown (Markdown)
+import Yesod.Text.Markdown
 
 -- algebraic data structure 
 data BlogPost = BlogPost
-      { title :: Text
+      { title :: Text,
+        article :: Markdown
       }
 
 blogPostForm  :: AForm Handler BlogPost
 blogPostForm  = BlogPost 
-              <$> areq textField (bfs ("Title" :: Text)) Nothing 
+              <$> areq textField (bfs ("Title" :: Text)) Nothing
+              <*> areq markdownField (bfs ("Title" :: Text)) Nothing
 
 getPostNewR :: Handler Html
 getPostNewR = do
