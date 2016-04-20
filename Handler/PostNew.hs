@@ -13,7 +13,7 @@ import Yesod.Text.Markdown
 blogPostForm  :: AForm Handler BlogPost
 blogPostForm  = BlogPost 
               <$> areq textField (bfs ("Title" :: Text)) Nothing
-              <*> areq markdownField (bfs ("Title" :: Text)) Nothing
+              <*> areq markdownField (bfs ("Article" :: Text)) Nothing
 
 getPostNewR :: Handler Html
 getPostNewR = do
