@@ -6,4 +6,4 @@ database:
   # something like:
   #
   #   database: "_env:SQLITE_DATABASE:my-yesod-stack-project_test.sqlite3"
-  database: my-yesod-stack-project_test.sqlite3
+  database: syesod_test
